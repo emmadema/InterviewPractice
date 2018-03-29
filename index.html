@@ -8,18 +8,52 @@
 	<h1>Hello World</h1>
 	<script type="text/javascript">
 		//First Repeating Char in a String
-		let test = "helloo";
+		const test = "nhjkfhwejfbefwerfiob";
 
-		for (let i=0; i < test.length; i++) {
-			let char = test[i];
-			console.log(char);
-			// console.log(char);
+		function getRepeatingChar() {
+			for (let i=0; i < test.length; i++) {
+				var charCount = 0;
+				for (let x=0; x  < test.length; x++) {
+					if(test[i] === test[x]) {
+						charCount ++;
+						if (charCount >= 2) {
+							// console.log(test[i]);
+							return;
+						}
+					} 
+				}
+			}
 		}
+
+		getRepeatingChar();
 		
-
-		// console.log(test);
-
 		//Sort Array of numbers so all even numbers are in the front
+
+		const numArray = [2, 3, 5, 6, 8, 9 ,30, -100, 65, 3.5];
+		let newArray = [];
+
+
+		// console.log(numArray);
+
+		function numSort() {
+			for (let n=0; n < numArray.length; n++) {
+				let evenNum = numArray[n];
+				if (evenNum % 2 == 0) {
+					newArray.push(evenNum);
+				} 
+			}
+			for (let x=0; x < numArray.length; x++) {
+				let oddNum = numArray[x];
+				if (oddNum % 2 !== 0) {
+					newArray.push(oddNum);
+				}
+			}
+			console.log(newArray);
+		}
+
+		numSort();
+
+
 		//Change integer to binary compnent and then reverse the bits back into an integer
 		//Big O Notation
 	</script>
